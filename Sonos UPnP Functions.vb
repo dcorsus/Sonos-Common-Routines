@@ -14,7 +14,8 @@ Imports System.Data.SQLite
 
 '<Serializable()> _
 'Public Class ZonePlayerController
-Partial Public Class HSPI 'HSMusicAPI
+Public Class SonosUPNPFunctions
+
     'Inherits MarshalByRefObject
 
     Public WithEvents myAVTransportCallback As New myUPnPControlCallback
@@ -80,7 +81,7 @@ Partial Public Class HSPI 'HSMusicAPI
     Private MyHSTMusicIndex As Integer = 0
     Private MyZoneIsLinked As Boolean = False
     Private MySourceLinkedZone As String = ""
-    Private MyHSPIControllerRef As HSPI = Me
+    Private MyHSPIControllerRef As Object ' HSPI = Me
     Private MyZoneIsSourceForLinkedZone As Boolean = False
     Private MyTargetZoneLinkedList As String = "" ' this is a list of Zone Names when this zone is source for other linked zone players
     Private WaitingToReConnect As Boolean = False
@@ -101,8 +102,8 @@ Partial Public Class HSPI 'HSMusicAPI
     Private ZoneHasFixedVolume As Boolean = False
     Private MyZoneModel As String = ""
     Private MyDestinationZone As String = ""
-    Private MyWirelessDockSourcePlayer As HSPI = Nothing
-    Private MyWirelessDockDestinationPlayer As HSPI = Nothing
+    Private MyWirelessDockSourcePlayer As Object = Nothing 'HSPI = Nothing
+    Private MyWirelessDockDestinationPlayer As Object = Nothing ' HSPI = Nothing
     Private MyWirelessDockZoneName As String = ""
     Private MyAutoPlayRoomUUID As String = ""
     Private MyAutoPlayLinkedZones As Boolean = False
@@ -337,10 +338,10 @@ Partial Public Class HSPI 'HSMusicAPI
         MyUPnPDevice = Nothing
     End Sub
 
-    Public WriteOnly Property HSPIControllerRef As HSPI
+    Public WriteOnly Property HSPIControllerRef As Object 'HSPI
         ' pass a reference to the Sonos HS plugin. This is needed to find other zone players in case zones are linked and updates need to be send to the other instances of ZonePlayerController
         ' to have their events and status updated in HS
-        Set(ByVal value As HSPI)
+        Set(ByVal value As Object) 'HSPI)
             MyHSPIControllerRef = value
         End Set
     End Property

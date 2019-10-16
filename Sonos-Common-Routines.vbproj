@@ -1,8 +1,15 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <RootNamespace>Sonos_Common_Routines</RootNamespace>
     <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="..\HS-Common-Routines\MCastSocket.vb" Link="MCastSocket.vb" />
+    <Compile Include="..\HS-Common-Routines\MyUPnP.vb" Link="MyUPnP.vb" />
+    <Compile Include="..\HS-Common-Routines\TCPListener.vb" Link="TCPListener.vb" />
+    <Compile Include="..\HS-Common-Routines\utils.vb" Link="utils.vb" />
+  </ItemGroup>
 
 </Project>
