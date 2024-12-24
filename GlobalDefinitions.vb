@@ -355,6 +355,7 @@ Public Module HS_GLOBAL_VARIABLES
         Isolated = 24
         onBlueTooth = 25
         Upgrading = 26
+        LowBattery = 27
     End Enum
 
     Public Enum DeviceStateValues
@@ -366,6 +367,7 @@ Public Module HS_GLOBAL_VARIABLES
         Isolated = 5
         onBlueTooth = 6
         Upgrading = 7
+        LowBattery = 8
     End Enum
 
     Public Enum PlayerTriggerEvents
@@ -394,6 +396,7 @@ Public Module HS_GLOBAL_VARIABLES
         lineinConnected = 29
         lineinDisconnected = 30
         transitioning = 31
+        LowBattery = 32
     End Enum
 
     Public ReadOnly Property TriggerCommandSelectOptions As Dictionary(Of PlayerTriggerEvents, String)
@@ -414,6 +417,7 @@ Public Module HS_GLOBAL_VARIABLES
             {PlayerTriggerEvents.OffLine, "goes Offline"},
             {PlayerTriggerEvents.Sleeping, "goes to Sleeping"},
             {PlayerTriggerEvents.PowerOff, "goes to Powered Off"},
+            {PlayerTriggerEvents.LowBattery, "goes to Low Battery"},
             {PlayerTriggerEvents.onBluetooth, "switches to Bluetooth"},
             {PlayerTriggerEvents.NextSong, "Next Track Change"},
             {PlayerTriggerEvents.AnnouncementStart, "Announcement Start"},
